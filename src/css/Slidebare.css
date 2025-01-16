@@ -1,0 +1,146 @@
+.iconImage{
+    width: 30px;
+    height: 30px;
+  }
+  .SidebarList{
+    height: auto;
+    margin-top: 15px;
+    width: 100%;
+    padding: 0;
+  }
+  .SidebarList .row{
+    width: 100%;
+    height: 50px;
+    list-style-type: none;
+    margin-top: 0px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  .SidebarList .row:hover{
+    cursor: pointer;
+    background-color: #293846;
+    
+  }
+  .SidebarList #active{
+    background-color: #41576c;
+  }
+  .openRow #icon{
+    width: 80px;
+    display: grid;
+    place-items: center;
+  }
+  .openRow #title{
+    width: 170px;
+    color: white;
+  }
+  .SidebarList .closeRow #title :hover{
+    display: block; 
+    color: black;
+  }
+  .closeRow #title{
+    display: none;
+  }
+  .container {
+    display: flex;
+    height: 100vh;
+    flex: 1;
+  }
+  .information{
+    background-color: #293846;
+    width: 100vw;
+    height: 200px;
+    display: flex;
+    justify-content:center; 
+    align-items:start;  
+  }
+  .h1{
+    text-align: center;
+  }
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width:900px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  .contentPage{
+    justify-content: center; 
+    align-items: baseline;  
+    width: 100vw;
+    height: 100vh;    
+  }
+  .openContainer{
+    margin-left: 240px;
+  }
+  .closeContainer{
+    margin-left: 80px;
+  }
+  .myProfile{
+    display: flex;
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 15px;
+     height: 80px;
+  
+  }
+  .profileInfo{
+    padding-left: 10px;
+    height: 80px;
+    flex: 1;
+    height: auto;
+    margin: 0;
+  }
+  
+  .profile{
+    display: inline-flex;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      align-items: left;
+  }
+  .topMenu{
+    display: flex;
+    flex-direction: row-reverse;
+  
+  }
+  .openMenu #details{
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px
+  }
+  
+  .closemenu #details {
+    display: none;
+  }
+   
+  .buttonMenu{
+    width: 100px;
+    height: 70px;
+    background: #2f4050;
+    border: 0;
+  
+  }
+  .menuImage{
+    width: 25px;
+  }
+  .closemenu{
+    width: 80px;
+    height: 100vh;
+  }
+  .openMenu{
+    width: 250px;
+    height: 100vh;
+  }
+  
+  .Sidebar{
+    background: #2f4050;
+    position: fixed;
+  };
+  
