@@ -1,8 +1,7 @@
-import React, { ReactNode, useContext, useEffect } from 'react'
+import  { ReactNode, useContext } from 'react'
 import { SidebarData } from "./SlidebarData"
 import MyProfile from './MyProfile';
 import MenuButton from './MenuButton';
-import '../../css/Slidebare.css'
 import { SidebarContext } from '../../context/SlidebarContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 

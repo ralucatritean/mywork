@@ -1,5 +1,3 @@
-import Sidebar from '../components/Slidebare/Slidebare';
-
 function TicTacToe() {
     return (
         <div className="container">
