@@ -2,7 +2,7 @@ import './css/index.css'
 import { useState } from 'react'
 import { Outlet } from 'react-router-dom'  // Adaugă acest import
 import { SidebarContext } from './context/SlidebarContext';
-import Sidebar from './components/Slidebare/Slidebare';
+import Sidebar from './components/Sidebare/Sidebare';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
