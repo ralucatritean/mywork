@@ -1,5 +1,6 @@
 import './css/index.css'
 import { useState } from 'react'
+import { Outlet } from 'react-router-dom'  // Adaugă acest import
 import { SidebarContext } from './context/SlidebarContext';
 import Sidebar from './components/Slidebare/Slidebare';
 
@@ -11,6 +12,7 @@ function App() {
       <div className="app-container">
         <Sidebar />
         <div className="main-content">
+          <Outlet />  {/* Aici se vor afișa componentele din rute */}
         </div>
       </div>
     </SidebarContext.Provider>

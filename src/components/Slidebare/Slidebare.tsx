@@ -4,6 +4,7 @@ import MyProfile from './MyProfile';
 import MenuButton from './MenuButton';
 import '../../css/Slidebare.css'
 import { SidebarContext } from '../../context/SlidebarContext';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 interface SidebarProps {
     children?: ReactNode;
@@ -11,12 +12,17 @@ interface SidebarProps {
 
 const Sidebar = ({ children }: SidebarProps) => {
     const { isOpen, setIsOpen } = useContext(SidebarContext);
+    const navigate = useNavigate();
+    const location = useLocation();
     
     const toggle = () => setIsOpen(!isOpen);
 
-    useEffect(() => {
-        console.log(isOpen);
-    }, [isOpen]);
+    // Funcție pentru a verifica path-ul curent
+    const isActivePath = (itemPath: string) => {
+        // Eliminăm basename-ul "/mywork" și slash-ul inițial pentru comparație
+        const currentPath = location.pathname.replace('/mywork', '');
+        return currentPath === `/${itemPath}`;
+    };
 
     return (
         <div className={`Sidebar ${isOpen ? 'openMenu' : 'closemenu'}`}>
@@ -34,7 +40,11 @@ const Sidebar = ({ children }: SidebarProps) => {
                         <li
                             key={key}
                             className={`row ${isOpen ? 'openRow' : 'closeRow'}`}
-                            id={location.pathname === val.link ? "active" : ""}
+                            id={isActivePath(val.path) ? "active" : ""}
+                            onClick={() => {
+                                navigate(val.link);
+                                console.log("Navigating to:", val.link); // pentru debugging
+                            }}
                         >
                             <div id='icon'>{val.icon}</div>{" "}
                             <div id='title'>{val.title}</div>
