@@ -1,4 +1,4 @@
-import  { ReactNode, useContext } from 'react'
+import { ReactNode, useContext } from 'react'
 import { SidebarData } from "./SlidebarData"
 import MyProfile from './MyProfile';
 import MenuButton from './MenuButton';
@@ -14,12 +14,16 @@ const Sidebar = ({ children }: SidebarProps) => {
     const { isOpen, setIsOpen } = useContext(SidebarContext);
     const navigate = useNavigate();
     const location = useLocation();
-    
-    const toggle = () => setIsOpen(!isOpen);
 
-    // Funcție pentru a verifica path-ul curent
+    const toggle = () => setIsOpen(!isOpen);
+    const handleNavigation = (link: string) => {
+        navigate(link);
+        if (window.innerWidth < 520) {
+            setIsOpen(false);  // Adaugă această linie
+        }
+    };
+
     const isActivePath = (itemPath: string) => {
-        // Eliminăm basename-ul "/mywork" și slash-ul inițial pentru comparație
         const currentPath = location.pathname.replace('/mywork', '');
         return currentPath === `/${itemPath}`;
     };
@@ -31,28 +35,28 @@ const Sidebar = ({ children }: SidebarProps) => {
                     <MenuButton />
                 </button>
             </div>
-            <div>
-                <MyProfile/>
+            <div className='sideContent'>
+                <MyProfile />
+                <ul className='SidebarList'>{
+                    SidebarData.map((val, key) => {
+                        return (
+                            <li
+                                key={key}
+                                className={`row ${isOpen ? 'openRow' : 'closeRow'}`}
+                                id={isActivePath(val.path) ? "active" : ""}
+                                onClick={() => {
+                                    handleNavigation(val.link);
+                                }}
+                            >
+                                <div id='icon'>{val.icon}</div>{" "}
+                                <div className="sidebar-text" id='title'>{val.title}</div>
+                            </li>
+                        )
+                    })}
+                </ul>
             </div>
-            <ul className='SidebarList'>{
-                SidebarData.map((val, key) => {
-                    return (
-                        <li
-                            key={key}
-                            className={`row ${isOpen ? 'openRow' : 'closeRow'}`}
-                            id={isActivePath(val.path) ? "active" : ""}
-                            onClick={() => {
-                                navigate(val.link);
-                                console.log("Navigating to:", val.link); // pentru debugging
-                            }}
-                        >
-                            <div id='icon'>{val.icon}</div>{" "}
-                            <div id='title'>{val.title}</div>
-                        </li>
-                    )
-                })}
-            </ul>
-            <main>{children}</main>
+
+            <div>{children}</div>
         </div>
     );
 };

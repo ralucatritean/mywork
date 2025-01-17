@@ -1,146 +1,231 @@
-.iconImage{
-    width: 30px;
-    height: 30px;
-  }
-  .SidebarList{
-    height: auto;
-    margin-top: 15px;
-    width: 100%;
-    padding: 0;
-  }
-  .SidebarList .row{
-    width: 100%;
-    height: 50px;
-    list-style-type: none;
-    margin-top: 0px;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-  .SidebarList .row:hover{
-    cursor: pointer;
-    background-color: #293846;
-    
-  }
-  .SidebarList #active{
-    background-color: #41576c;
-  }
-  .openRow #icon{
-    width: 80px;
-    display: grid;
-    place-items: center;
-  }
-  .openRow #title{
-    width: 170px;
-    color: white;
-  }
-  .SidebarList .closeRow #title :hover{
-    display: block; 
-    color: black;
-  }
-  .closeRow #title{
-    display: none;
-  }
-  .container {
-    display: flex;
-    height: 100vh;
-    flex: 1;
-  }
-  .information{
-    background-color: #293846;
+.iconImage {
+  width: 30px;
+  height: 30px;
+}
+
+.SidebarList {
+  height: auto;
+  margin-top: 15px;
+  width: 100%;
+  padding: 0;
+}
+
+.SidebarList .row {
+  width: 100%;
+  height: 50px;
+  list-style-type: none;
+  margin-top: 0px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.SidebarList .row:hover {
+  cursor: pointer;
+  background-color: #293846;
+
+}
+
+.SidebarList #active {
+  background-color: #41576c;
+}
+
+.openRow #icon {
+  width: 80px;
+  display: grid;
+  place-items: center;
+}
+
+.openRow #title {
+  width: 170px;
+  color: white;
+}
+
+.SidebarList .closeRow #title :hover {
+  display: block;
+  color: black;
+}
+
+.closeRow #title {
+  display: none;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  flex: 1;
+}
+
+.information {
+  background-color: #293846;
+  width: 100vw;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.h1 {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 900px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.contentPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 93vw;
+  height: 100vh;
+}
+
+.openContainer {
+  margin-left: 240px;
+  transition: margin-left 0.5s ease;
+}
+
+.closeContainer {
+  margin-left: 80px;
+  transition: margin-left 0.5s ease;
+}
+
+.myProfile {
+  display: flex;
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-top: 15px;
+  height: 80px;
+
+}
+
+.profileInfo {
+  padding-left: 10px;
+  height: auto;  
+  flex: 1;
+  margin: 0;
+  transform-origin: left center;
+  white-space: nowrap;
+}
+
+.profile {
+  display: inline-flex;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  align-items: left;
+}
+.closemenu .profileInfo {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.openMenu .profileInfo {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+.topMenu {
+  display: flex;
+  flex-direction: row-reverse;
+
+}
+
+.openMenu #details {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px
+}
+
+.closemenu #details {
+  display: none;
+}
+
+.buttonMenu {
+  width: 80px;
+  height: 60px;
+  background: #2f4050;
+  border: 0;
+
+}
+
+.menuImage {
+  width: 25px;
+}
+
+.closemenu {
+  width: 80px;
+  height: 100vh;
+  transition: all 0.5s ease;
+}
+
+.openMenu {
+  width: 250px;
+  height: 100vh;
+  transition: all 0.5s ease;
+}
+.closemenu .sidebar-text{
+  opacity: 0;
+  visibility: hidden;
+  transition:  all 0.5 ease;
+}
+.openMenu .sidebar-text{
+  opacity: 1;
+  display: block;
+  transition:  all 0.5 ease;
+}
+
+.Sidebar {
+  background: #2f4050;
+  position: fixed;
+}
+@media (max-width: 520px) {
+  .closemenu {
+    height: 10vh; /* sau o valoare fixă type 60px */
     width: 100vw;
-    height: 200px;
-    display: flex;
-    justify-content:center; 
-    align-items:start;  
+    transition: all 0.5s ease;
+    overflow: hidden; /* pentru a ascunde conținutul când e închis */
   }
-  .h1{
-    text-align: center;
+  .openMenu {
+    height: 100vh;
+    width: 100vw;
+    transition: all 0.5s ease;
   }
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    width:900px;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+  .openMenu .sideContent{
+    opacity: 1;
+    transition: all 0.5s ease;
+    display: block;
+  }
+
+  .closemenu .sideContent {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
   }
   .contentPage{
-    justify-content: center; 
-    align-items: baseline;  
-    width: 100vw;
-    height: 100vh;    
-  }
-  .openContainer{
-    margin-left: 240px;
-  }
-  .closeContainer{
-    margin-left: 80px;
-  }
-  .myProfile{
-    display: flex;
-    padding-left: 10px;
-    padding-right: 20px;
-    padding-top: 15px;
-     height: 80px;
-  
-  }
-  .profileInfo{
-    padding-left: 10px;
-    height: 80px;
-    flex: 1;
-    height: auto;
-    margin: 0;
+    margin-top: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   
-  .profile{
-    display: inline-flex;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      align-items: left;
-  }
-  .topMenu{
-    display: flex;
-    flex-direction: row-reverse;
-  
-  }
-  .openMenu #details{
-    color: white;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 14px
-  }
-  
-  .closemenu #details {
-    display: none;
-  }
-   
-  .buttonMenu{
-    width: 100px;
-    height: 70px;
-    background: #2f4050;
-    border: 0;
-  
-  }
-  .menuImage{
-    width: 25px;
-  }
-  .closemenu{
-    width: 80px;
-    height: 100vh;
-  }
-  .openMenu{
-    width: 250px;
-    height: 100vh;
-  }
-  
+}
+@media (max-width: 900px) {
   .Sidebar{
-    background: #2f4050;
+    z-index: 999;
     position: fixed;
-  };
+  }
   
+}

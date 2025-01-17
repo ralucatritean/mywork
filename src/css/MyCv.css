@@ -10,6 +10,7 @@ body {
 .contentPage {
     flex: 1;
     display: flex;
+    width: auto;
     flex-direction: column;
 }
 .iconFooterImage{
@@ -50,7 +51,7 @@ body {
     grid-template-columns: 50% 50%;
     grid-gap: 0;
     padding: 5px;
-    width: 80%;
+    width: 90%;
 }
 
 .left-column,
