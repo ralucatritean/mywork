@@ -1,0 +1,161 @@
+.app-container {
+    min-height: 100vh;
+    display: flex;
+  }
+  
+  .main-content {
+    flex: 1;
+    display: flex;
+    color: #18181b;
+  }
+  
+  .container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .contentPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 2rem;
+  }
+  
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #f3f4f6;
+    padding: 2rem;
+    border-radius: 0.5rem;
+  }
+  
+  .score-board {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .score-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .x-score {
+    color: #2563eb;
+    font-size: 1.25rem;
+  }
+  
+  .o-score {
+    color: #dc2626;
+    font-size: 1.25rem;
+  }
+  
+  .score-value {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    background-color: #18181b;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+  }
+  
+  .game-square {
+    width: 240px    ;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background-color: #18181b;
+    border: 2px solid #3f3f46;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .game-square:hover {
+    border-color: #52525b;
+  }
+  
+  .x-move {
+    color: #2563eb;
+  }
+  
+  .o-move {
+    color: #dc2626;
+  }
+  
+  .game-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .control-button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .reset-game {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .reset-game:hover {
+    background-color: #2563eb;
+  }
+  
+  .reset-scores {
+    background-color: #6b7280;
+    color: white;
+  }
+  
+  .reset-scores:hover {
+    background-color: #4b5563;
+  }
+  @media (max-width: 1000px) {
+  .game-square {
+    width: 180px    ;
+    height: 180px;}}
+  @media (max-width: 640px) {
+    .game-square {
+      width: 80px;
+      height: 80px;
+      font-size: 2rem;
+    }
+  
+    .score-board {
+      gap: 2rem;
+      margin: 0px;
+    }
+    
+    .game-container {
+      padding: 1rem;
+    }
+    .contentPage{
+        margin:0px;
+        margin-top: 20px;
+        height: auto;
+    }
+  }

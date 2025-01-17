@@ -1,24 +1,35 @@
 import './index.css'
 import App from './App.tsx'
 import { createRoot } from 'react-dom/client';
-import {  createBrowserRouter,RouterProvider} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from 'react'
 import MyCvPage from './pages/MyCv.tsx';
 import Movie from './pages/Movie.tsx';
 import Home from './components/Movie/Home.tsx';
 import Favorite from './components/Movie/Favorite.tsx';
+import TicTacToe from './pages/TicTacToe.tsx';
+import MemoryGame from './pages/MemoryGame.tsx';
 
 const router = createBrowserRouter([
   {
-    path: "/",  // Schimbăm din "/mywork/" în "/"
+    path: "/",
     element: <App />,
     children: [
       {
-        path: "myCvPage", // Eliminăm slash-ul din față
+        path: "myCvPage",
         element: <MyCvPage />,
       },
       {
-        path: "movie",    // Eliminăm slash-ul din față
+        path: "tictactoe",
+        element: <TicTacToe />,
+      },
+      {
+        path: "memorygame",
+        element: <MemoryGame />,
+      },
+      {
+        
+        path: "movie",
         element: <Movie />,
         children: [
           {

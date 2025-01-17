@@ -16,7 +16,7 @@ function MyCvPage() {
                 <p>Game Developer</p>
             </div>
 
-            <div className="container">
+            <div className="containerCv">
                 <div className="left-column">
                     <h2>SUMAR PROFESIONAL</h2>
                     <p><b>Game developer</b> cu peste 3 ani de experiență, membru al echipei responsabile de un portofoliu de peste 25 de jocuri mobile. Specializată în Unity și C#, cu expertiză în optimizarea performanței, implementarea sistemelor de gameplay și integrarea serviciilor backend. Demonstrez abilități solide de depanare, refactorizare cod și colaborare eficientă cu echipe de artiști și designeri.
