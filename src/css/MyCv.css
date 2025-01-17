@@ -24,7 +24,6 @@ body {
     text-align: center;
     padding: 20px;
     width: 100vw;
-    padding-right: 170px;
 }
 
 .header h1 {
@@ -59,7 +58,6 @@ body {
     background-color: white;
     padding: 0px;
     padding-left: 20px;
-    width: 90%;
     padding-bottom: 30px;
 }
 
@@ -106,7 +104,6 @@ ul {
     padding: 10px 0;
     width: 100vw;
     background-color: #0077B6;
-    padding-right: 170px;
 }
 .footer p{
     color: white;
@@ -117,4 +114,43 @@ ul {
 }
 .left-footer{
     text-align: left;
+}
+@media screen and (max-width: 520px) {
+    /* Remove black borders */
+    .contentPage {
+        border: none;
+        background-color: white;
+    }
+    
+    body {
+        background-color: white;
+    }
+    .container {
+        grid-template-columns: 100%;
+    }
+    
+    .small-container {
+        grid-template-columns: 100%;
+    }
+    
+    .left-column {
+        border-right: none;
+        border-bottom: 5px solid #0077B6;
+    }
+    
+    .header, .footer {
+        padding-right: 0;
+        width: 100%;
+    }
+    
+    .left-column, .right-column {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .center-footer {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
 }
