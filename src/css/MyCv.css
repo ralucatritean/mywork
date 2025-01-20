@@ -117,3 +117,45 @@ ul {
 .left-footer{
     text-align: left;
 }
+@media screen and (max-width: 520px) {
+    .containerCv {
+        display: block;
+        grid-gap: 0;
+    }
+    
+    .mccontent {
+        background-color: white;
+    }
+    .contentPage {
+        border: none;
+    }
+    
+    .container {
+        grid-template-columns: 100%;
+    }
+    
+    .small-container {
+        grid-template-columns: 100%;
+    }
+    
+    .left-column {
+        border-right: none;
+        border-bottom: 5px solid #0077B6;
+    }
+    
+    .header, .footer {
+        padding-right: 0;
+        width: 100%;
+    }
+    
+    .left-column, .right-column {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .center-footer {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+}
