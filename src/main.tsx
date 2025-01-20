@@ -10,6 +10,7 @@ import Favorite from './components/Movie/Favorite.tsx';
 import TicTacToe from './pages/TicTacToe.tsx';
 import MemoryGame from './pages/MemoryGame.tsx';
 import NotFound from './css/NotFound.tsx';
+import AboutMe from './pages/AboutMe.tsx';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFound />,
     children: [
+      {
+        path: '/',
+        element: <AboutMe />,
+      },
       {
         path: "myCvPage",
         element: <MyCvPage />,
