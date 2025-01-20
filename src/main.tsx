@@ -9,11 +9,13 @@ import Home from './components/Movie/Home.tsx';
 import Favorite from './components/Movie/Favorite.tsx';
 import TicTacToe from './pages/TicTacToe.tsx';
 import MemoryGame from './pages/MemoryGame.tsx';
+import NotFound from './css/NotFound.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "myCvPage",
