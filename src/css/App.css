@@ -9,3 +9,9 @@
 .content {
   width: 90%;
 }
+
+@media screen and (max-width: 520px) {
+  .main-content {
+    margin-top: 80px;
+  }
+}
