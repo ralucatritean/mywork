@@ -26,7 +26,6 @@
     margin: 0;
 }
 
-
 .ab-container {
     display: grid;
     grid-gap: 0;
@@ -38,7 +37,6 @@
     padding: 10px;
     background-color: aqua;
 }
-
-
-@media screen and (max-width: 520px) {
+.aboutme-content{
+    height: 250 px;
 }
