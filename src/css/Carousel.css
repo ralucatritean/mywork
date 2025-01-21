@@ -7,23 +7,18 @@
   background-color: white;
 }
 
-/* Container pentru imagine */
+/* Container pentru carousel */
 .carousel-container {
   width: 90%;
   flex-shrink: 0;
   overflow: hidden;
 }
 
-.carousel-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Slider principal */
+/* Container pentru slider */
 .slider-root {
   width: 90%;
   position: relative;
+  height: 100%;
 }
 
 .slider-wrapper {
@@ -38,92 +33,45 @@
   height: 100%;
 }
 
-.slider-item-content {
-  height: 100%;
-  width: 80%;
-  display: grid;
-  justify-content: center;
-}
-
 .slider-item {
   min-width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  align-items: flex-start;  /* Modificat la flex-start pentru aliniere sus */
+  justify-content: flex-start;  /* Modificat pentru aliniere stânga */
+  padding: 2rem;
 }
 
-.slide-1 { background-color: rgb(191 219 254); }
-.slide-2 { background-color: rgb(187 247 208); }
-.slide-3 { background-color: rgb(254 202 202); }
-.slide-4 { background-color: rgb(233 213 255); }
+/* Stiluri pentru text în slider */
+.slider-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  text-align: left;
+  max-width: 90%;
+  margin: 0 auto;
+}
 
+/* Butoane navigare slider */
 .slider-nav-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 0.5rem;
-  border-radius: 9999px;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
 
-/* Responsive pentru mobile */
-@media (max-width: 768px) {
-  .aboutMe-container {
-    display: flex;
-    flex-direction: column;
-    min-height: auto;
-    padding: 1rem;
-  }
-
-  .carousel-container {
-    width: 100%;
-  }
-
-  .slider-root {
-    width: 100%;
-  }
-
-  .slide-wrapper {
-    flex: 0 0 100%;
-  }
-
-  .carousel-track {
-    padding: 0 1rem;
-  }
-
-  .navigation-button {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .slide-image {
-    max-height: 300px;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .slider-item {
-    padding: 1rem;
-  }
-}
-
-/* Responsive pentru ecrane foarte înalte */
-@media (min-height: 1000px) {
-  .carousel-container {
-    height: 90vh;
-  }
-
-  .slider-root {
-    height: 600px;
-  }
-}
-
 .slider-nav-button:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 }
 
 .slider-nav-button.prev {
@@ -134,36 +82,25 @@
   right: 1rem;
 }
 
-.slider-indicators {
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.5rem;
-  z-index: 10;
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutMe-container {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 2rem;
+  }
+
+  .carousel-container,
+  .slider-root {
+    width: 100%;
+  }
+
+  .slider-item {
+    padding: 1rem;
+  }
 }
 
-.slider-indicator {
-  width: 0.75rem;
-  height: 0.75rem;
-  border-radius: 9999px;
-  transition: background-color 0.3s;
-  background-color: rgba(168, 249, 241, 0.5);
-}
-
-.slider-indicator.active {
-  background-color: rgba(168, 249, 241);
-}
-
-.slider-text {
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-align: center;
-  color: #333;
-}
-
-/* Carusel nou pentru imagini mari */
+/* Restul stilurilor pentru carousel rămân neschimbate */
 .carousel-wrapper {
   position: relative;
   height: 100%;
@@ -208,78 +145,22 @@
   transition: transform 500ms ease-out;
 }
 
-.navigation-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: white;
-  border: none;
-  cursor: pointer;
-  z-index: 20;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navigation-button:hover {
-  background-color: rgb(232, 255, 248);
-  transform: translateY(-50%) scale(1.1);
-  transition: all 0.2s ease-in-out;
-}
-
-.prev-button {
-  left: 0.25rem;
-}
-
-.next-button {
-  right: 0.25rem;
-}
-
-.iconImage {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
 @media (min-width: 640px) {
   .slide-wrapper {
     flex: 0 0 48%;
   }
-
+  
   .slide-wrapper:nth-child(2) .slide {
     transform: scale(1.4);
-  }
-
-  .carousel-track {
-    gap: 0.5rem;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-
-@media (min-width: 768px) {
-  .slide-wrapper {
-    flex: 0 0 32%;
-  }
-
-  .carousel-track {
-    gap: 0.75rem;
-    padding-left: 50px;
-    padding-right: 50px;
   }
 }
 
 @media (min-width: 1024px) {
   .slide-wrapper {
-    flex: 0 0 20%;
+    flex: 0 0 30%;
   }
-
-  .carousel-track {
-    gap: 1rem;
-    padding-left: 60px;
-    padding-right: 60px;
+  
+  .slide-wrapper:nth-child(2) .slide {
+    transform: scale(1.5);
   }
 }
