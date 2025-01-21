@@ -10,11 +10,12 @@ function AboutMe() {
 
     return (
         <div className={` contentPage ${isOpen ? 'openContainer' : 'closeContainer mccontent'}`}>'
-            <div className="aboutMe-container">
                 <div className="header">
                     <h1>Grama Raluca Georgiana</h1>
                     <p>Game Developer</p>
+                    <button></button>
                 </div>
+                <div className="aboutMe-container">
 
                 <CustomSlider />
                 <Carousel />

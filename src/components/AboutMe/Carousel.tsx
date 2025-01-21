@@ -24,6 +24,8 @@ import img18 from "../../assets/fish_5.png";
 import img19 from "../../assets/dog_10.png";
 import img20 from "../../assets/fish_6.png";
 import img21 from "../../assets/fish_7.png";
+import img22 from "../../assets/avon_1.jpeg";
+import img23 from "../../assets/avon_2.png";
 
 interface Slide {
   id: number;
@@ -54,31 +56,29 @@ const Carousel: React.FC = () => {
     { id: 19, image: img19 },
     { id: 20, image: img20 },
     { id: 21, image: img21 },
+    { id: 22, image: img22 },
+    { id: 23, image: img23 },
   ]);
 
   useEffect(() => {
-    // Set up an interval to move to the next slide every 2 seconds
     const intervalId = setInterval(() => {
       moveSlide('next');
-    }, 2000);
-
-    // Clear the interval when the component unmounts
+    }, 50000);
     return () => clearInterval(intervalId);
   }, []);
   
   const getVisibleSlides = () => {
     const totalSlides = slides.length;
     const visibleSlides = [];
-
     const width = window.innerWidth;
-    let visibleCount = 1; // default pentru mobile
+    let visibleCount = 1; // Default for mobile
 
     if (width >= 1024) {
-      visibleCount = 5;
+      visibleCount = 3; // Maximum 3 for desktop
     } else if (width >= 768) {
-      visibleCount = 3;
-    } else if (width >= 640) {
-      visibleCount = 2;
+      visibleCount = 2; // Show 2 for tablet
+    } else {
+      visibleCount = 1; // Show 1 for mobile
     }
 
     for (let i = 0; i < visibleCount; i++) {
@@ -88,6 +88,7 @@ const Carousel: React.FC = () => {
 
     return visibleSlides;
   };
+
   const moveSlide = (direction: 'next' | 'prev') => {
     setCurrentIndex(prevIndex => {
       if (direction === 'next') {
@@ -100,38 +101,34 @@ const Carousel: React.FC = () => {
 
   const getSlideStyle = (index: number) => {
     const width = window.innerWidth;
-    let visibleCount = 1; // default pentru mobile
-    let centerIndex = 0;  // default pentru mobile
+    let visibleCount = 1;
+    let centerIndex = 0;
 
     if (width >= 1024) {
-      visibleCount = 5;
-      centerIndex = 2;
-    } else if (width >= 768) {
       visibleCount = 3;
       centerIndex = 1;
-    } else if (width >= 640) {
+    } else if (width >= 768) {
       visibleCount = 2;
-      centerIndex = 1;
+      centerIndex = 0;
     }
 
     const distance = Math.abs(centerIndex - index);
-
+    
+    // Enhanced scaling effect
     let scale = 1;
-    if (distance === 2) scale = 0.5;
-    else if (distance === 1) scale = 0.7;
-    else if (distance === 0) scale = 1;
-
-    // Pentru vizualizări cu mai puține elemente, ajustăm scala
-    if (visibleCount < 5) {
-      scale = distance === 0 ? 1 : 0.7;
+    if (visibleCount === 3) {
+      // For desktop
+      if (distance === 1) scale = 0.8;
+      if (distance === 2) scale = 0.6;
+    } else if (visibleCount === 2) {
+      // For tablet
+      if (distance === 1) scale = 0.7;
     }
-    if (visibleCount === 1) {
-      scale = 1; // Pentru mobile, toate imaginile la aceeași dimensiune
-    }
+    // For mobile, keep scale = 1
 
     return {
       transform: `scale(${scale})`,
-      opacity: 1 - (distance * 0.15),
+      opacity: 1 - (distance * 0.2),
       zIndex: 10 - distance,
     };
   };
@@ -162,13 +159,15 @@ const Carousel: React.FC = () => {
         <button
           onClick={() => moveSlide('prev')}
           className="navigation-button prev-button"
-        ><img className='iconImage' src={left} />
+        >
+          <img className='iconImage' src={left} />
         </button>
 
         <button
           onClick={() => moveSlide('next')}
           className="navigation-button next-button"
-        ><img className='iconImage' src={right} />
+        >
+          <img className='iconImage' src={right} />
         </button>
       </div>
     </div>
