@@ -14,15 +14,12 @@
     width: 100%;
   }
   
-  .contentPage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-    padding: 2rem;
+  .ttt-contentPage{
+    height: 100vh;
   }
-  
+  .game-status {
+    color: white;
+  }
   .game-container {
     display: flex;
     flex-direction: column;
@@ -76,8 +73,8 @@
   }
   
   .game-square {
-    width: 240px    ;
-    height: 240px;
+    width: 130px;
+    height: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,7 +150,7 @@
     .game-container {
       padding: 1rem;
     }
-    .contentPage{
+    .ttt-contentPage{
         margin:0px;
         margin-top: 20px;
         height: auto;

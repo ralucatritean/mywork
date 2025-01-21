@@ -84,22 +84,34 @@
 }
 
 .contentPage {
+  margin-top: -30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 93vw;
-  height: 100vh;
+  width: 96vw;
+  height: auto;
 }
 
 .openContainer {
   margin-left: 240px;
   transition: margin-left 0.5s ease;
 }
+.closeContainer {
+  margin-left: 80px;
+  transition: margin-left 0.5s ease;
+}
 
-
+.btn-profile {
+  display: inline-flex;
+  width: 100%;
+  height: auto;
+  background: #2f4050;
+}
 
 .myProfile {
-  display: flex;
+  display: inline-flex;
+  width: 100%;
+  height: auto;
   padding-left: 10px;
   padding-right: 20px;
   padding-top: 15px;
@@ -118,11 +130,11 @@
 
 .profile {
   display: inline-flex;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  align-items: left;
 }
+
 .closemenu .profileInfo {
   opacity: 0;
   transform: scale(0.8);
@@ -189,6 +201,9 @@
 .Sidebar {
   background: #2f4050;
   position: fixed;
+}
+.ttt-contentPage{
+  width: 100%;
 }
 @media (max-width: 520px) {
   .closemenu {

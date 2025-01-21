@@ -12,7 +12,7 @@ function App() {
       <div className="app-container">
         <Sidebar />
         <div className="main-content">
-          <Outlet />  {/* Aici se vor afișa componentele din rute */}
+          <Outlet />  
         </div>
       </div>
     </SidebarContext.Provider>

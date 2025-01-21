@@ -10,7 +10,7 @@ function MyCvPage() {
     const { isOpen } = useContext(SidebarContext);
 
     return (
-        <div className={` contentPage ${isOpen ? 'openContainer' : 'closeContainer mccontent'}`}>
+        <div className={` contentPage ${isOpen ? 'openContainer' : 'closeContainer mccontent'}`}>'
             <div className="header">
                 <h1>Grama Raluca Georgiana</h1>
                 <p>Game Developer</p>

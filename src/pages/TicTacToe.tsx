@@ -94,7 +94,7 @@ function TicTacToe() {
     );
     return (
         <div className="container">
-            <div className="contentPage">
+            <div className="ttt-contentPage">
                 <h1 className="game-title">Tic Tac Toe</h1>
 
                 <div className="game-status">

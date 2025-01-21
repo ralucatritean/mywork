@@ -122,7 +122,7 @@ const MemoryGame: React.FC = () => {
 
   return (
     <div className="container">
-      <div className="contentPage">
+      <div className="mg-contentPage">
         <div className="memory-game">
           <div className="game-title">Joc de Memorie</div>
           <div className="game-stats">
