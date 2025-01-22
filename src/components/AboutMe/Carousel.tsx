@@ -63,7 +63,7 @@ const Carousel: React.FC = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       moveSlide('next');
-    }, 2000);
+    }, 1500);
     return () => clearInterval(intervalId);
   }, []);
   
@@ -71,15 +71,7 @@ const Carousel: React.FC = () => {
     const totalSlides = slides.length;
     const visibleSlides = [];
     const width = window.innerWidth;
-    let visibleCount = 1; // Default for mobile
-
-    if (width >= 1024) {
-      visibleCount = 3; // Maximum 3 for desktop
-    } else if (width >= 768) {
-      visibleCount = 2; // Show 2 for tablet
-    } else {
-      visibleCount = 1; // Show 1 for mobile
-    }
+    let visibleCount = width >= 768 ? 3 : 1; // 3 slides for desktop/tablet, 1 for mobile
 
     for (let i = 0; i < visibleCount; i++) {
       const index = (currentIndex + i) % totalSlides;
@@ -101,30 +93,12 @@ const Carousel: React.FC = () => {
 
   const getSlideStyle = (index: number) => {
     const width = window.innerWidth;
-    let visibleCount = 1;
-    let centerIndex = 0;
+    if (width < 768) return { transform: 'scale(1)' }; // Mobile: no scaling
 
-    if (width >= 1024) {
-      visibleCount = 3;
-      centerIndex = 1;
-    } else if (width >= 768) {
-      visibleCount = 2;
-      centerIndex = 0;
-    }
-
+    // Desktop/tablet: center image is larger
+    const centerIndex = 1;
     const distance = Math.abs(centerIndex - index);
-    
-    // Enhanced scaling effect
-    let scale = 1;
-    if (visibleCount === 3) {
-      // For desktop
-      if (distance === 1) scale = 0.8;
-      if (distance === 2) scale = 0.6;
-    } else if (visibleCount === 2) {
-      // For tablet
-      if (distance === 1) scale = 0.7;
-    }
-    // For mobile, keep scale = 1
+    const scale = distance === 0 ? 1.2 : 0.8;
 
     return {
       transform: `scale(${scale})`,
@@ -134,9 +108,9 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <div className="carousel-container">
-      <div className="carousel-wrapper">
-        <div className="carousel-track">
+    <div className="img-carousel-container">
+      <div className="img-carousel-wrapper">
+        <div className="img-carousel-track">
           {getVisibleSlides().map((slide, index) => (
             <div
               key={`${slide.id}-${currentIndex}-${index}`}
@@ -159,15 +133,13 @@ const Carousel: React.FC = () => {
         <button
           onClick={() => moveSlide('prev')}
           className="navigation-button prev-button"
-        >
-          <img className='iconImage' src={left} />
+        ><img className='iconArrow' src={left} />
         </button>
 
         <button
           onClick={() => moveSlide('next')}
           className="navigation-button next-button"
-        >
-          <img className='iconImage' src={right} />
+        ><img className='iconArrow' src={right} />
         </button>
       </div>
     </div>
