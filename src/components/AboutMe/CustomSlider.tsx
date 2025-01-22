@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../css/Carousel.css';
 import left from "../../assets/left.png"
 import right from "../../assets/right.png";
@@ -7,6 +7,7 @@ const CustomSlider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [touchStart, setTouchStart] = useState(0);
     const [touchEnd, setTouchEnd] = useState(0);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
 
     const items = [
         {
@@ -22,7 +23,7 @@ const CustomSlider = () => {
         {
             id: 3,
             title: "De la web la jocuri educative: O nouă direcție",
-            content: "Anii de facultate au fost o perioadă de explorare intensă în lumea programării, unde am avut șansa să experimentez cu diverse tehnologii și domenii. De la dezvoltarea de aplicații desktop la machine learning, de la baze de date la inteligență artificială, fiecare materie mi-a oferit o nouă perspectivă asupra a ceea ce poate face tehnologia. Deși inițial visam să mă specializez în web development, am descoperit treptat farmecul fiecărui domeniu. Apogeul acestei călătorii a venit odată cu proiectul de licență, unde am îmbinat toate cunoștințele acumulate pentru a crea un joc educativ interactiv. Acesta ajuta copiii să învețe principiile programării într-un mod distractiv, ghidând un iepuraș prin diverse provocări folosind comenzi simple de programare. Acest proiect nu doar că mi-a confirmat pasiunea pentru programare, dar mi-a deschis și ochii către o nouă direcție - dezvoltarea de jocuri educative"
+            content: "Anii de facultate au fost o perioadă de explorare intensă în lumea programării, unde am avut șansa să experimentez cu diverse tehnologii și domenii. De la dezvoltarea de aplicații desktop la machine learning, de la baze de date la inteligență artificială, fiecare materie mi-a oferit o nouă perspectivă asupra a ceea ce poate face tehnologia. Deși inițial visam să mă specializez în web development, am descoperit treptat farmecul fiecărui domeniu. Apogeul acestei călătorii a venit odată cu proiectul de licență, unde am îmbinat toate cunoștințele acumulate pentru a crea un joc educativ interactiv. Acesta ajută copiii să învețe principiile programării într-un mod distractiv, ghidând un iepuraș prin diverse provocări folosind comenzi simple de programare. Acest proiect nu doar că mi-a confirmat pasiunea pentru programare, dar mi-a deschis și ochii către o nouă direcție - dezvoltarea de jocuri educative"
         }, {
             id: 4,
             title: "Primul job: Călătoria în lumea game development-ului",
@@ -40,7 +41,7 @@ const CustomSlider = () => {
         },
         {
             id: 7,
-            title: "Pe scurt: Portret personal și profesiona",
+            title: "Pe scurt: Portret personal și profesional",
             content: "Sunt o persoană care îmbină pasiunea pentru tehnologie cu dragostea pentru natură și animale, căutând mereu să învăț lucruri noi și să mă dezvolt. Creativitatea mea se manifestă atât în cod, cât și în proiectele personale, fie că e vorba de un goblen nou sau de o soluție tehnică inovatoare. Un moment definitoriu care mi-a conturat abilitățile de leadership a fost în 2023, când am obținut locul 27 la nivel național în competiția Supernova, un top al celor mai buni lideri din țară. Această realizare este o reflecție a determinării, priceperii și capacității mele de a conduce și inspira o echipă încă de la o vârstă fragedă. Experiența mea ca lider Avon m-a format ca o persoană deschisă, capabilă să vorbesc în fața unui public - și deși emoțiile sunt încă prezente, am învățat să le transform în energie pozitivă. Această experiență timpurie în coordonarea unei echipe m-a învățat importanța strategiei și a planificării atente pentru atingerea obiectivelor. Sunt o persoană care îmbină sensibilitatea emoțională cu gândirea analitică, știind când să mă las ghidată de intuiție și când să adopt o abordare calculată. Cred în puterea echipei și în importanța relațiilor autentice, fie că e vorba de colegii de muncă sau de familia mea. Sunt determinată să-mi urmez visele, chiar dacă asta înseamnă să ies din zona de confort, așa cum o demonstrează recenta mea tranziție către dezvoltarea web. Dar mai presus de toate, sunt o fire nonconformistă care adoră să îmbine elementele aparent contrare ale vieții într-un mod unic și personal."
         },
     ];
@@ -57,15 +58,31 @@ const CustomSlider = () => {
         );
     };
 
+    useEffect(() => {
+        const handleResize = () => {
+            const mobile = window.innerWidth < 800;
+            setIsMobile(mobile);
+            if (mobile) {
+                setCurrentIndex(0);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const handleTouchStart = (e: React.TouchEvent) => {
+        if (isMobile) return;
         setTouchStart(e.targetTouches[0].clientX);
     };
 
     const handleTouchMove = (e: React.TouchEvent) => {
+        if (isMobile) return;
         setTouchEnd(e.targetTouches[0].clientX);
     };
 
     const handleTouchEnd = () => {
+        if (isMobile) return;
         if (!touchStart || !touchEnd) return;
 
         const distance = touchStart - touchEnd;
