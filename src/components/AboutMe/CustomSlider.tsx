@@ -41,8 +41,8 @@ const CustomSlider = () => {
         {
             id: 7,
             title: "Pe scurt: Portret personal și profesiona",
-            content: "Sunt o persoană care îmbină pasiunea pentru tehnologie cu dragostea pentru natură și animale, căutând mereu să învăț lucruri noi și să mă dezvolt. Creativitatea mea se manifestă atât în cod, cât și în proiectele personale, fie că e vorba de un goblen nou sau de o soluție tehnică inovatoare. Un moment definitoriu care mi-a conturat abilitățile de leadership a fost în 2023, când am obținut locul 27 la nivel național în competiția Supernova, un top al celor mai buni lideri din țară. Această realizare este o reflecție a determinării, priceperii și capacității mele de a conduce și inspira o echipă încă de la o vârstă fragedă. Experiența mea ca lider Avon m-a format ca o persoană deschisă, capabilă să vorbesc în fața unui public - și deși emoțiile sunt încă prezente, am învățat să le transform în energie pozitivă. Această experiență timpurie în coordonarea unei echipe m-a învățat importanța strategiei și a planificării atente pentru atingerea obiectivelor. Sunt o persoană care îmbină sensibilitatea emoțională cu gândirea analitică, știind când să mă las ghidată de intuiție și când să adopt o abordare calculată. Cred în puterea echipei și în importanța relațiilor autentice, fie că e vorba de colegii de muncă sau de familia mea. Sunt determinată să-mi urmez visele, chiar dacă asta înseamnă să ies din zona de confort, așa cum o demonstrează recenta mea tranziție către dezvoltarea web. Dar mai presus de toate, sunt o fire nonconformistă care adoră să îmbine elementele aparent contrare ale vieții într-un mod unic și personal. Sper că această versiune îmbunătățită a portretului tău personal și profesional, cu integrarea realizării tale remarcabile de la Supernova, îți place mai mult și te reprezintă fidel. Scopul meu a fost să evidențiez cu mândrie acest succes semnificativ care demonstrează abilitățile tale native de lider și determinarea de a excela."
-         },
+            content: "Sunt o persoană care îmbină pasiunea pentru tehnologie cu dragostea pentru natură și animale, căutând mereu să învăț lucruri noi și să mă dezvolt. Creativitatea mea se manifestă atât în cod, cât și în proiectele personale, fie că e vorba de un goblen nou sau de o soluție tehnică inovatoare. Un moment definitoriu care mi-a conturat abilitățile de leadership a fost în 2023, când am obținut locul 27 la nivel național în competiția Supernova, un top al celor mai buni lideri din țară. Această realizare este o reflecție a determinării, priceperii și capacității mele de a conduce și inspira o echipă încă de la o vârstă fragedă. Experiența mea ca lider Avon m-a format ca o persoană deschisă, capabilă să vorbesc în fața unui public - și deși emoțiile sunt încă prezente, am învățat să le transform în energie pozitivă. Această experiență timpurie în coordonarea unei echipe m-a învățat importanța strategiei și a planificării atente pentru atingerea obiectivelor. Sunt o persoană care îmbină sensibilitatea emoțională cu gândirea analitică, știind când să mă las ghidată de intuiție și când să adopt o abordare calculată. Cred în puterea echipei și în importanța relațiilor autentice, fie că e vorba de colegii de muncă sau de familia mea. Sunt determinată să-mi urmez visele, chiar dacă asta înseamnă să ies din zona de confort, așa cum o demonstrează recenta mea tranziție către dezvoltarea web. Dar mai presus de toate, sunt o fire nonconformistă care adoră să îmbine elementele aparent contrare ale vieții într-un mod unic și personal."
+        },
     ];
 
     const nextSlide = () => {
@@ -93,6 +93,15 @@ const CustomSlider = () => {
                 Mergi la rezumat
             </button>
             <div className="slider-wrapper">
+                <div>
+                    <button
+                        onClick={prevSlide}
+                        className="slider-nav-button prev"
+                        aria-label="Previous slide">
+                        <img className='iconArrow' src={left} />
+                    </button>
+
+                </div>
                 <div
                     className="slider-content"
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -100,10 +109,10 @@ const CustomSlider = () => {
                     onTouchMove={handleTouchMove}
                     onTouchEnd={handleTouchEnd}
                 >
-                    {items.map((item) => (
+                    {items.map((item, index) => (
                         <div
                             key={item.id}
-                            className="slider-item"
+                            className={`slider-item ${index === currentIndex ? 'show' : ''}`}
                         >
                             <div className="slider-item-content">
                                 <h2 className="slider-title">{item.title}</h2>
@@ -112,34 +121,19 @@ const CustomSlider = () => {
                         </div>
                     ))}
                 </div>
-            </div>
-
-            <button
-                onClick={prevSlide}
-                className="slider-nav-button prev"
-                aria-label="Previous slide"
-            >
-                <img className='iconImage' src={left} />
-            </button>
-
-            <button
-                onClick={nextSlide}
-                className="slider-nav-button next"
-                aria-label="Next slide"
-            >
-                <img className='iconImage' src={right} />
-            </button>
-
-            <div className="slider-indicators">
-                {items.map((_, index) => (
+                <div>
                     <button
-                        key={index}
-                        className={`slider-indicator ${index === currentIndex ? 'active' : ''}`}
-                        onClick={() => setCurrentIndex(index)}
-                        aria-label={`Go to slide ${index + 1}`}
-                    />
-                ))}
+                        onClick={nextSlide}
+                        className="slider-nav-button next"
+                        aria-label="Next slide" >
+                        <img className='iconArrow' src={right} />
+                    </button>
+                </div>
+
             </div>
+
+
+
         </div>
     );
 };

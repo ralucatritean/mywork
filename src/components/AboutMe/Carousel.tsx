@@ -63,7 +63,7 @@ const Carousel: React.FC = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       moveSlide('next');
-    }, 50000);
+    }, 2000);
     return () => clearInterval(intervalId);
   }, []);
   
