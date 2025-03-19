@@ -1,0 +1,23 @@
+.contentPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    background-color: white;
+  }
+  .openContainer {
+    margin-left: 245px;
+    transition: margin-left 0.5s ease;
+  }
+  .closeContainer {
+    margin-left: 95px;
+    transition: margin-left 0.5s ease;
+  }
+  
+  @media (max-width: 520px) {
+    .contentPage{
+        margin-top: 80px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+  }

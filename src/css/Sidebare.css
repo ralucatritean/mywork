@@ -83,24 +83,6 @@
   border-bottom: 2px solid black;
 }
 
-.contentPage {
-  margin-top: -30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 96vw;
-  height: auto;
-}
-
-.openContainer {
-  margin-left: 240px;
-  transition: margin-left 0.5s ease;
-}
-.closeContainer {
-  margin-left: 80px;
-  transition: margin-left 0.5s ease;
-}
-
 .btn-profile {
   display: inline-flex;
   width: 100%;
@@ -228,11 +210,7 @@
     opacity: 0;
     transition: all 0.5s ease;
   }
-  .contentPage{
-    margin-top: 80px;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+  
   
 }
 @media (max-width: 900px) {

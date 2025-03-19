@@ -9,23 +9,6 @@
     width: 97vw;
     height: 100vh;
 }
-
-.am-header {
-    background-color: #0077B6;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.header h1 {
-    font-size: 24px;
-    margin: 0;
-}
-
 .ab-container {
     display: grid;
     grid-gap: 0;

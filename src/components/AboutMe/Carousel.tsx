@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "../../css/Carousel.css";
+import "../../css/components/AboutMe/Carousel.css";
 import left from "../../assets/left.png"
 import right from "../../assets/right.png";
 
@@ -13,8 +13,6 @@ import img6 from "../../assets/dog_6.png";
 import img7 from "../../assets/dog_8.png";
 import img8 from "../../assets/dog_9.png";
 import img9 from "../../assets/dog_10.png";
-
-
 
 import img10 from "../../assets/fish_2.png";
 import img11 from "../../assets/fish_4.png";

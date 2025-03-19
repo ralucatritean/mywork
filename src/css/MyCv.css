@@ -6,31 +6,7 @@ body {
     flex-direction: column;
 }
 
-.iconFooterImage {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-}
 
-.header {
-    background-color: #0077B6;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    width: 95vw;
-    ;
-    padding-right: 170px;
-}
-
-.header h1 {
-    font-size: 24px;
-    margin: 0;
-}
-
-.header p {
-    font-size: 16px;
-    margin: 5px 0 0 0;
-}
 
 .containerCv {
     display: grid;
@@ -97,27 +73,6 @@ ul {
     margin: 2px 0;
 }
 
-.footer {
-    text-align: center;
-    padding: 10px 0;
-    width: 100vw;
-    background-color: #0077B6;
-    padding-right: 170px;
-    height: 230px;
-}
-
-.footer p {
-    color: white;
-}
-
-.center-footer {
-    width: 250px;
-    margin: 0 auto;
-}
-
-.left-footer {
-    text-align: left;
-}
 
 .mccontent {
     padding-left: 20px;
@@ -148,22 +103,13 @@ ul {
         border-bottom: 5px solid #0077B6;
     }
 
-    .header,
-    .footer {
-        padding-right: 0;
-        width: 100%;
-    }
-
     .left-column,
     .right-column {
         width: 100%;
         padding: 15px;
     }
 
-    .center-footer {
-        width: 100%;
-        padding: 0 15px;
-    }
+   
     .containerCv {
         display: block;
         grid-gap: 0;
@@ -172,11 +118,6 @@ ul {
 
     .container {
         grid-template-columns: 100%;
-    }
-
-    .header {
-        padding-right: 0;
-        width: 100%;
     }
 }
 
@@ -189,10 +130,5 @@ ul {
 
     .container {
         grid-template-columns: 100%;
-    }
-
-    .header {
-        padding-right: 0;
-        width: 100%;
     }
 }

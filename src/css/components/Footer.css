@@ -1,0 +1,22 @@
+.footer {
+    background-color: #0077B6;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+.footer p {
+    color: white;
+} 
+
+.iconFooterImage {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.left-center-footer {
+    width: 250px;
+    margin: 0 auto;
+    text-align: left;
+
+}

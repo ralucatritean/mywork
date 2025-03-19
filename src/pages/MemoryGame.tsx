@@ -122,7 +122,6 @@ const MemoryGame: React.FC = () => {
 
   return (
     <div className="container">
-      <div className="mg-contentPage">
         <div className="memory-game">
           <div className="game-title">Joc de Memorie</div>
           <div className="game-stats">
@@ -153,7 +152,6 @@ const MemoryGame: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

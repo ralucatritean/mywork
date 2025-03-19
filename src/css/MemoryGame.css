@@ -123,9 +123,7 @@
 .start-instructions p{
   color: white;
 }
-.mg-contentPage {
-  width: 100%;
-}
+
 /* iPhone SE și telefoane mici */
 @media (max-width: 375px) {
   .game-title {
