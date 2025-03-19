@@ -3,29 +3,29 @@ import "../../css/Carousel.css";
 import left from "../../assets/left.png"
 import right from "../../assets/right.png";
 
-import img1 from "../../assets/dog_1.png";
-import img2 from "../../assets/fish_1.png";
-import img3 from "../../assets/dog_2.png";
-import img4 from "../../assets/want_1.png";
-import img5 from "../../assets/dog_3.png";
-import img6 from "../../assets/want_2.jpg";
-import img7 from "../../assets/shoes_1.png";
-import img8 from "../../assets/dog_4.png";
-import img9 from "../../assets/shoes_2.jpg";
-import img10 from "../../assets/dog_5.png";
-import img11 from "../../assets/fish_2.png";
-import img12 from "../../assets/dog_6.png";
-import img13 from "../../assets/dog_7.png";
-import img14 from "../../assets/fish_3.png";
-import img15 from "../../assets/dog_8.png";
-import img16 from "../../assets/fish_4.png";
-import img17 from "../../assets/dog_9.png";
-import img18 from "../../assets/fish_5.png";
-import img19 from "../../assets/dog_10.png";
-import img20 from "../../assets/fish_6.png";
-import img21 from "../../assets/fish_7.png";
-import img22 from "../../assets/avon_1.jpeg";
-import img23 from "../../assets/avon_2.png";
+import img1 from "../../assets/img_3.png"
+import img2 from "../../assets/img_4.png"
+import img3 from "../../assets/img_5.png"
+import img4 from "../../assets/avon_1.jpeg"
+import img5 from "../../assets/avon_2.png"
+
+import img6 from "../../assets/dog_6.png";
+import img7 from "../../assets/dog_8.png";
+import img8 from "../../assets/dog_9.png";
+import img9 from "../../assets/dog_10.png";
+
+
+
+import img10 from "../../assets/fish_2.png";
+import img11 from "../../assets/fish_4.png";
+
+import img12 from "../../assets/want_1.png";
+import img13 from "../../assets/want_2.jpg";
+
+import img14 from "../../assets/shoes_1.png";
+import img15 from "../../assets/shoes_2.jpg";
+
+
 
 interface Slide {
   id: number;
@@ -50,14 +50,6 @@ const Carousel: React.FC = () => {
     { id: 13, image: img13 },
     { id: 14, image: img14 },
     { id: 15, image: img15 },
-    { id: 16, image: img16 },
-    { id: 17, image: img17 },
-    { id: 18, image: img18 },
-    { id: 19, image: img19 },
-    { id: 20, image: img20 },
-    { id: 21, image: img21 },
-    { id: 22, image: img22 },
-    { id: 23, image: img23 },
   ]);
 
   useEffect(() => {
