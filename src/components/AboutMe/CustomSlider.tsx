@@ -118,7 +118,7 @@ const CustomSlider = () => {
                 >
                     {items.map((item, index) => (
                         <div
-                            key={item.id}
+                            key={`slider-item-${index}`}
                             className={`slider-item ${index === currentIndex ? 'show' : ''}`}
                         >
                             <div className="slider-item-content">

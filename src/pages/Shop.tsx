@@ -85,7 +85,7 @@ const Shop = () => {
 
                     <div className="custom-grid-products">
                         {filteredProducts.map((product) => (
-                            <ProductCard key={product.id} id={product.id} images={product.images} name={product.name} price={product.price} />
+                            <ProductCard key={`product-card-item-${product.id}`} id={product.id} images={product.images} name={product.name} price={product.price} />
                         ))}
                     </div>
                 </CartProvider>

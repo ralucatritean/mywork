@@ -42,7 +42,7 @@ const ProductDetails = () => {
                 <div className="image-content">
                     <div key={product.id} className={`listOfImage-${product.images.length}`}>
                         {product.images.map((image, index) => (
-                            <button key={product.id} className="imgBtn" onClick={() => { setPhotoId(index) }}>
+                            <button key={`img-${index}`} className="imgBtn" onClick={() => { setPhotoId(index) }}>
                                 <img src={image} className="smallImg" /></button>
                         ))}
                     </div>

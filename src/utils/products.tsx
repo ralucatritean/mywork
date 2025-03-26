@@ -19,7 +19,7 @@ export const products = [
     {
         id: "2",
         name: "Bricheta",
-        description: "Short description",
+        description: "Brichetă metalică tip Zippo un cadou special dar și util, gata personalizate cu grafică și text așa încât ție să îți rămână doar să oferi cadoul Daca doresti poti adauga o poza pe verso. Bricheta este ambalata într-o cutiuță metalică elegantă și este încărcată cu gaz pentru a putea fi folosită imediat ce a fost primită. Poate fi reincarcata de nenumarate ori. ",
         price: 50,
         inStock: true,
         images: [pr2],
@@ -27,7 +27,7 @@ export const products = [
       {
         id: "3",
         name: "Termos 400ml",
-        description: "Short description",
+        description: "Transforma aceasta cana termos intr-un cadou cu adevarat special! Poti personaliza cana cu un nume, un mesaj inspirational, o data importanta sau logo-ul companiei tale. Spune-ne cum vrei sa arate termosul tau!",
         price: 30,
         inStock: true,
         images: [pr3,pr3_1],
@@ -35,7 +35,7 @@ export const products = [
       {
         id: "4",
         name: "Tricou",
-        description: "Short description",
+        description: "Tricouri Personalizate cu pozele și mesajele tale sau cu mesaje predefinite, surprinde-ţi prietenii cu un cadou personalizat special!Alege un cadou inspirat și creativ pentru orice sărbătorit. Te ajutăm să personalizezi tricoul așa cum dorești tu.Tricouri Personalizate – alegerea perfectă pentru aniversarii.Tricourile sunt din material de calitate, rezultatul fiind uimitor pentru cumpărător. Un mare avantaj este pretul accesibil.",
         price: 45,
         inStock: true,
         images: [pr4],
@@ -43,7 +43,7 @@ export const products = [
       {
         id: "5",
         name: "Hanorac",
-        description: "Short description",
+        description: "Pentru dame sau pentru bărbați, la noi găsești orice hanorace personalizate cu poza ta sau cu un model la alegere la prețuri avantajoase. Ne pasă de ceea ce îți dorești, astfel că în oferta noastră găsești hanorace de bărbați personalizate până la cel mai mic detaliu, care pot fi purtate cu blugi, într-o ținută casual și mai mult decât confortabilă.",
         price: 70,
         inStock: true,
         images: [pr5],
@@ -51,7 +51,7 @@ export const products = [
       {
         id: "6",
         name: "Agenda",
-        description: "Short description",
+        description: "Agenda este disponibilă atât în varianta datată pentru 2025, cât și nedatată, oferind flexibilitate pentru diverse tipuri de organizare. Indiferent de varianta aleasă, această agendă devine un instrument practic și estetic pentru orice angajat, colaborator sau partener de afaceri.",
         price: 40,
         inStock: true,
         images: [pr6],
