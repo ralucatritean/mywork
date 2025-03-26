@@ -5,16 +5,11 @@ import ProductCard from "../components/Shop/ProductCard";
 import "../css/components/Shop/Shop.css"
 import { products } from "../utils/products";
 import logo from "../assets/LOGO.png"
-import cart from "../assets/cart.png"
 import { Outlet, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ProductSearch from "../utils/ProductSearch";
 import { CartProvider } from "../context/CartContext";
 import CartBtn from "../components/Shop/CartBtn";
-
-const Horizontal = () => {
-    return <hr className="w-[100%] my-2" />
-}
 
 const Shop = () => {
     const { id } = useParams();
@@ -25,11 +20,7 @@ const Shop = () => {
     const handleShopClick = () => {
         navigate(`/shop/`);
     };
-    const handleCartClick = () => {
-        navigate(`/shop/cart/`);
-    };
 
-    // Filter products based on search query
     const filteredProducts = products.filter(product =>
         product.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
@@ -93,9 +84,4 @@ const Shop = () => {
         </div>
     );
 }
-
 export default Shop;
-function getCartItemCount() {
-    throw new Error("Function not implemented.");
-}
-

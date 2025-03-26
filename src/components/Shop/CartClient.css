@@ -8,14 +8,17 @@
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
-.shoppingCartHeader{
+
+.shoppingCartHeader {
     text-align: center;
 }
-.shoppingCartHeader h2{
+
+.shoppingCartHeader h2 {
     color: black;
 }
 
-.start-shopping, .continue-shopping {
+.start-shopping,
+.continue-shopping {
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -75,32 +78,54 @@
     color: #64748b;
     font-size: 0.875rem;
 }
+
 .set-quantity {
     display: flex;
     gap: 2rem;
     align-items: center;
-  }
-  
-  .quantity-label {
+}
+
+.quantity-label {
     font-weight: 600;
-  }
-  
-  .quantity-controls {
+}
+
+.quantity-controls {
     display: flex;
     gap: 1rem;
     align-items: center;
-  }
-  
-  .quantity-btn {
+}
+
+.quantity-btn {
     border: 1.2px solid #cbd5e0;
     padding: 0 0.5rem;
     border-radius: 0.25rem;
     background: none;
     cursor: pointer;
     color: black;
-  }
-  
-  .quantity-display {
+}
+
+.quantity-display {
     min-width: 1rem;
     text-align: center;
-  }
+}
+
+@media (max-width: 768px) {
+    .item-content{
+        max-width: 600px;
+    }
+    .item-price {
+        font-size: 10px;
+    }
+    .item-total {
+        font-size: 10px;
+    }
+    .quantity-display {
+        font-size: 10px;
+    }
+    .quantity-controls {
+        gap: 0px;
+    }
+    .cart-header {
+        gap: 0px;
+    }
+}

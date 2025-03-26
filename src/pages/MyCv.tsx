@@ -3,24 +3,11 @@ import Footer from "../components/Footer";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import ContentItem from "../components/MyCv/ContentItem";
-import cvPdf from "../../dist/assets/CV_GramaRaluca-Georgiana.pdf"
 
 function MyCvPage() {
-    const handleDownloadPDF = () => {
-        const pdfURL = cvPdf; // Înlocuiți cu calea corectă
-        const link = document.createElement("a");
-        link.href = pdfURL;
-        link.setAttribute("download", "CV_Grama_Raluca.pdf");
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
     return (
         <Container>
             <Header title="Grama Raluca-Georgiana" subTitle="Game Developer" />
-            <div className="cvButtonDiv">
-                <button onClick={handleDownloadPDF} className="cvButton"> Descarca CV</button>
-            </div>
             <div className="containerCv">
                 <div className="left-column">
                     <ContentItem title="SUMAR PROFESIONAL" texts={["<b>Game developer</b> cu peste 3 ani de experiență, membru al echipei responsabile de un portofoliu de peste 25 de jocuri mobile. Specializată în Unity și C#, cu expertiză în optimizarea performanței, implementarea sistemelor de gameplay și integrarea serviciilor backend. Demonstrez abilități solide de depanare, refactorizare cod și colaborare eficientă cu echipe de artiști și designeri.",

@@ -1,8 +1,5 @@
 import React from 'react';
 
-interface CartProductType {
-}
-
 interface SetQtyProps {
     quantity: number;
     cartCounter?: boolean;
