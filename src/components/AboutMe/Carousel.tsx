@@ -27,13 +27,13 @@ import img15 from "../../assets/shoes_2.jpg";
 
 interface Slide {
   id: number;
-  image: any; // sau StaticImageData dacă folosești Next.js
+  image: any; 
 }
 
 const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slides] = useState<Slide[]>([
-    { id: 1, image: img1 },  // Folosește imaginea importată, nu calea
+    { id: 1, image: img1 },  
     { id: 2, image: img2 },
     { id: 3, image: img3 },
     { id: 4, image: img4 },
@@ -61,7 +61,7 @@ const Carousel: React.FC = () => {
     const totalSlides = slides.length;
     const visibleSlides = [];
     const width = window.innerWidth;
-    let visibleCount = width >= 768 ? 3 : 1; // 3 slides for desktop/tablet, 1 for mobile
+    let visibleCount = width >= 768 ? 3 : 1; 
 
     for (let i = 0; i < visibleCount; i++) {
       const index = (currentIndex + i) % totalSlides;
@@ -83,9 +83,8 @@ const Carousel: React.FC = () => {
 
   const getSlideStyle = (index: number) => {
     const width = window.innerWidth;
-    if (width < 768) return { transform: 'scale(1)' }; // Mobile: no scaling
+    if (width < 768) return { transform: 'scale(1)' };
 
-    // Desktop/tablet: center image is larger
     const centerIndex = 1;
     const distance = Math.abs(centerIndex - index);
     const scale = distance === 0 ? 1.2 : 0.8;
@@ -102,10 +101,7 @@ const Carousel: React.FC = () => {
       <div className="img-carousel-wrapper">
         <div className="img-carousel-track">
           {getVisibleSlides().map((slide, index) => (
-            <div
-              key={`${slide.id}-${currentIndex}-${index}`}
-              className="slide-wrapper"
-            >
+            <div  key={`${slide.id}-${currentIndex}-${index}`} className="slide-wrapper" >
               <div
                 className="slide"
                 style={getSlideStyle(index)}

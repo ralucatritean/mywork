@@ -1,0 +1,40 @@
+.custom-grid-products {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: -webkit-fill-available;
+    margin-left:5%;
+    margin-right:5%;
+    display: grid;
+    gap: 2rem; /* 8 x 0.25rem = 8 x 4px = 32px */
+  }
+  
+  /* Pentru ecrane mai mari */
+
+  @media (max-width: 640px) { /* sm */
+    .custom-grid-products {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  @media (min-width: 640px) { /* sm */
+    .custom-grid-products {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) { /* lg */
+    .custom-grid-products {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 1280px) { /* xl */
+    .custom-grid-products {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media (min-width: 1536px) { /* 2xl */
+    .custom-grid-products {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }

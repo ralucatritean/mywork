@@ -1,6 +1,6 @@
 import './css/index.css'
 import { useState } from 'react'
-import { Outlet } from 'react-router-dom'  // Adaugă acest import
+import { Outlet } from 'react-router-dom' 
 import { SidebarContext } from './context/SlidebarContext';
 import Sidebar from './components/Sidebare/Sidebare';
 

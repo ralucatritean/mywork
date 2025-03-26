@@ -6,7 +6,12 @@ body {
     flex-direction: column;
 }
 
-
+.cvButtonDiv{
+    padding: 10px;
+}
+.cvButton{
+    background-color: #0077B6;
+}
 
 .containerCv {
     display: grid;

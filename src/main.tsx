@@ -11,6 +11,9 @@ import TicTacToe from './pages/TicTacToe.tsx';
 import MemoryGame from './pages/MemoryGame.tsx';
 import NotFound from './css/NotFound.tsx';
 import AboutMe from './pages/AboutMe.tsx';
+import Shop from './pages/Shop.tsx';
+import ProductDetails from './components/Shop/ProductDetails.tsx';
+import CartClient from './components/Shop/CartClient.tsx';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +52,20 @@ const router = createBrowserRouter([
           }
         ]
       },
+      {
+         path: "shop",
+        element: <Shop />,
+        children: [
+          {
+            path: "cart",
+            element: <CartClient />,
+          },
+          {
+            path: ":id",
+            element: <ProductDetails/>,
+          }
+        ]
+      }
     ],
   },
 ], {

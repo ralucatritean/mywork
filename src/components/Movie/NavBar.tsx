@@ -15,21 +15,13 @@ function NavBar() {
         <div className='navbar-content'>
             <ul className="breadcrumb">
                 <li>
-                    <Link
-                        to="/movie"
-                        className={isActivePath('/movie') ? 'active' : ''}
-                    >
-                        Home
-                    </Link>
+                    <Link to="/movie" className={isActivePath('/movie') ? 'active' : ''}>
+                        Home</Link>
                 </li>
                 <li><span> {'>'} </span></li>
                 <li>
-                    <Link
-                        to="/movie/favorites"
-                        className={isActivePath('/movie/favorites') ? 'active' : ''}
-                    >
-                        Favorite
-                    </Link>
+                    <Link to="/movie/favorites" className={isActivePath('/movie/favorites') ? 'active' : ''}>
+                        Favorite </Link>
                 </li>
             </ul>
         </div>

@@ -1,5 +1,4 @@
 
-import "../css/AboutMe.css"
 import "../css/MyCv.css"
 import Carousel from "../components/AboutMe/Carousel";
 import CustomSlider from "../components/AboutMe/CustomSlider";
